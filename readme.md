@@ -12,3 +12,17 @@
         encapsulamento
         Abstração
         Interface
+        android sdk 
+        Linguagens: kOTLIN / JAVA
+        Plataformas: win / linux / Mac
+        IOS:
+        React native :
+        -Liguagens do javascript 
+        tipo de software
+        tipos de software :Android, IOS,LINUX,Web
+        ionic
+        linguagem é javascript
+        linguagem 
+        JavaScript 
+        run time         
+        Flutter 
