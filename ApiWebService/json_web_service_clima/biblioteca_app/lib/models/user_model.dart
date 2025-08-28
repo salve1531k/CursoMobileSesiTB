@@ -11,14 +11,14 @@ class UserModel {
   });
 
   //métodos
-  //toJson
+  //toJson => OBJ => MAP
   Map<String,dynamic> toJson() => {
     "id":id,
     "name":name,
     "email":email
     };
 
-  //fromJson
+  //fromJson => MAP => OBJ
   factory UserModel.fromJson(Map<String,dynamic> json) => UserModel(
     id: json["id"].toString(),
     name: json["name"].toString(), 

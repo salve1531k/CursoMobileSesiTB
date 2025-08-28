@@ -1,43 +1,41 @@
-
-
 import 'package:biblioteca_app/models/user_model.dart';
 import 'package:biblioteca_app/services/api_service.dart';
 
 class UserControler {
- 
+  //obs: não precisa instaciar obj de ApiService (métodos static)
 
   //métodos
-  // Get dos usuarios
+  // GET dos Usuários
   Future<List<UserModel>> fetchAll() async{
-    final list = await ApiService.getList("users?_sort=name");
+    final list = await ApiService.getList("users?_sort=name"); //?_sort=name -> flag para organizar em order alfabetica
+    //retorna a Lista de Usuário Convertidas para User Model List<dynamic> => List<OBJ>
     return list.map<UserModel>((item)=>UserModel.fromJson(item)).toList();
   }
 
-  //Post -> Criar novo Usuário
+  // POST -> Criar novo usuário
   Future<UserModel> create(UserModel u) async{
-    final created = await ApiService.post("users", u.toJson());
-    // adiciona um Usuario e retorna o usuario com -> ID
+    final created  = await ApiService.post("users", u.toJson());
+    // adiciona um Usuário e Retorna o Usuário Criado -> ID
     return UserModel.fromJson(created);
   }
 
-  //Buscar um usuario
+  // GET -> Buscar um Usuário
   Future<UserModel> fetchOne(String id) async{
-    final user = await ApiService.getOne("users",id);
-    // Retorna o Usuario Encontrado no Banco de Dados
+    final user = await ApiService.getOne("users", id);
+    // Retorna o Usuário Encontrado no Banco de Dados
     return UserModel.fromJson(user);
   }
 
-  //Put -> Atualizar Usuario
+  // PUT -> Atualizar Usuário
   Future<UserModel> update(UserModel u) async{
-    final update = await ApiService.put("users", u.toJson(), u.id!);
-    //Retornaa o usuario Atualizado
-    return UserModel.fromJson(update);
+    final updated = await ApiService.put("users", u.toJson(), u.id!);
+    //REtorna o Usuário Atualizado
+    return UserModel.fromJson(updated);
   }
 
   Future<void> delete(String id) async{
     await ApiService.delete("users", id);
-    // Não há retorno, Usuário deletado com sucesso
+    // Não há retorno, usuário deletado com sucesso
   }
-
 
 }

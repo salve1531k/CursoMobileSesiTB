@@ -1,26 +1,31 @@
-class UserModel {
+class BookModel {
   //atributos
-  final String? id; // pode ser nulo inicialmente
+  final String? id;
+  final String title;
   final String author;
-  final String avaliable;
+  final bool avaliable;
+
   //construtor
-  UserModel({
+  BookModel({
     this.id,
+    required this.title,
     required this.author,
     required this.avaliable
   });
 
-  //métodos
-  //toJson
-  Map<String,dynamic> toJson() => {
+  // métodos ToMap e FromMap
+  Map<String,dynamic> toMap() =>{
     "id":id,
-    "autor":author,
-    "avaliação":avaliable
-    };
+    "title":title,
+    "author":author,
+    "avaliable":avaliable
+  };
 
-  //fromJson
-  factory UserModel.fromJson(Map<String,dynamic> json) => UserModel(
-    id: json["id"].toString(),
-    author: json["autor"].toString(), 
-    avaliable: json["avaliações"].toString());
+  factory BookModel.fromMap(Map<String,dynamic> map)=> 
+  BookModel(
+    id: map["id"].toString(),
+    title: map["title"].toString(), 
+    author: map["author"].toString(), 
+    avaliable: map["avaliable"] == true ? true : false);
+
 }

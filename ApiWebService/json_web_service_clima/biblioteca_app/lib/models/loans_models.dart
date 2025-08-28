@@ -1,4 +1,4 @@
-class UserModel {
+class LoansModel {
   //atributos
   final String? id; // pode ser nulo inicialmente
   final String idusu;
@@ -7,7 +7,7 @@ class UserModel {
   final String devolucion;
   final String se;
   //construtor
-  UserModel({
+  LoansModel({
     this.id,
     required this.idusu,
     required this.idbo,
@@ -28,7 +28,7 @@ class UserModel {
     };
 
   //fromJson
-  factory UserModel.fromJson(Map<String,dynamic> json) => UserModel(
+  factory LoansModel.fromJson(Map<String,dynamic> json) => LoansModel(
     id: json["id"].toString(),
     idusu: json["Idusuario"].toString(), 
     idbo: json["Idlivro"].toString(),
