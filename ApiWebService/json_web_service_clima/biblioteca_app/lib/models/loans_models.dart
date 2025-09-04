@@ -1,3 +1,42 @@
+class LoanModel {
+  final String? id;
+  final String userId;
+  final String bookId;
+  final String userName;
+  final String bookTitle;
+  final DateTime date;
+  final bool returned;
+
+  LoanModel({
+    this.id,
+    required this.userId,
+    required this.bookId,
+    required this.userName,
+    required this.bookTitle,
+    required this.date,
+    required this.returned,
+  });
+
+  Map<String, dynamic> toMap() => {
+    "id": id,
+    "userId": userId,
+    "bookId": bookId,
+    "userName": userName,
+    "bookTitle": bookTitle,
+    "date": date.toIso8601String(),
+    "returned": returned,
+  };
+
+  factory LoanModel.fromMap(Map<String, dynamic> map) => LoanModel(
+    id: map["id"]?.toString() ?? map["_id"]?.toString(),
+    userId: map["userId"].toString(),
+    bookId: map["bookId"].toString(),
+    userName: map["userName"].toString(),
+    bookTitle: map["bookTitle"].toString(),
+    date: DateTime.parse(map["date"]),
+    returned: map["returned"] == true,
+  );
+}
 class LoansModel {
   //atributos
   final String? id; // pode ser nulo inicialmente

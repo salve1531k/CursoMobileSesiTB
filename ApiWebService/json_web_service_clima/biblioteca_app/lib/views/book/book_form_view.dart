@@ -31,6 +31,7 @@ class _BookFormViewState extends State<BookFormView> {
   void _save() async {
     if (_formkey.currentState!.validate()) {
       final book = BookModel(
+        id: DateTime.now().millisecondsSinceEpoch.toString(),
         title: _titleController.text,
         author: _authorController.text,
         avaliable: _avaliable,

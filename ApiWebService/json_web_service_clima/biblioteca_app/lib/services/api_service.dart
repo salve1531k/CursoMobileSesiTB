@@ -38,7 +38,7 @@ class ApiService {
       headers: {"Content-Type": "application/json"},
       body: json.encode(body),
     );
-    if (res.statusCode == 201) return json.decode(res.body);
+    if (res.statusCode == 200 || res.statusCode == 201) return json.decode(res.body);
     throw Exception("Falha ao atualizar em $path");
   }
 

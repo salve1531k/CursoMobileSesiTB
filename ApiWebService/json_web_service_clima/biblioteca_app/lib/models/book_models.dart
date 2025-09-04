@@ -23,7 +23,7 @@ class BookModel {
 
   factory BookModel.fromMap(Map<String,dynamic> map)=> 
   BookModel(
-    id: map["id"].toString(),
+    id: map["id"]?.toString() ?? map["_id"]?.toString(),
     title: map["title"].toString(), 
     author: map["author"].toString(), 
     avaliable: map["avaliable"] == true ? true : false);

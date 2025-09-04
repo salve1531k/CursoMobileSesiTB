@@ -33,6 +33,7 @@ if (widget.user != null) {
   void _save() async{
     if(_formkey.currentState!.validate()){
       final user = UserModel(
+        id: DateTime.now().millisecondsSinceEpoch.toString(),
         name: _nameController.text, 
         email: _emailController.text);
       await _controller.create(user);

@@ -1,16 +1,6 @@
 {
   "users": [
     {
-      "id": "1",
-      "name": "João",
-      "email": "joao@email.com"
-    },
-    {
-      "id": "2",
-      "name": "Mari",
-      "email": "maria@email.com"
-    },
-    {
       "id": null,
       "name": "fffgg",
       "email": "ffggg@"
@@ -19,6 +9,16 @@
       "id": null,
       "name": "gggg",
       "email": "dffg"
+    },
+    {
+      "id": null,
+      "name": "fffffff",
+      "email": "ttytttt"
+    },
+    {
+      "id": "1756985860063",
+      "name": "matheus",
+      "email": "ms@"
     }
   ],
   "books": [
@@ -33,6 +33,48 @@
       "title": "ggggg",
       "author": "drfddd",
       "avaliable": true
+    },
+    {
+      "id": null,
+      "title": "yhgggyy",
+      "author": "vvvvgvv",
+      "avaliable": true
+    },
+    {
+      "id": null,
+      "title": "nnnn",
+      "author": "ggggg",
+      "avaliable": true
+    },
+    {
+      "id": null,
+      "title": "jjjjj",
+      "author": "frffgff",
+      "avaliable": true
+    },
+    {
+      "id": null,
+      "title": "matheus",
+      "author": "miguel",
+      "avaliable": true
+    },
+    {
+      "id": null,
+      "title": "rrrrt",
+      "author": "rerrr",
+      "avaliable": true
+    },
+    {
+      "id": null,
+      "title": "tttt",
+      "author": "bb",
+      "avaliable": true
+    },
+    {
+      "id": "1756985919025",
+      "title": "banana",
+      "author": "banana",
+      "avaliable": true
     }
   ],
   "loans": [
@@ -42,6 +84,51 @@
       "bookId": 1,
       "startDate": "2025-08-20",
       "dueDate": "2025-08-30",
+      "returned": false
+    },
+    {
+      "id": "1756985720772",
+      "userId": "",
+      "bookId": "",
+      "userName": "matheus ",
+      "bookTitle": "banana",
+      "date": "2025-09-04T11:34:19.851502",
+      "returned": false
+    },
+    {
+      "id": "1756985749138",
+      "userId": "",
+      "bookId": "",
+      "userName": "yyyy",
+      "bookTitle": "fffff",
+      "date": "2025-09-04T11:35:40.721227",
+      "returned": false
+    },
+    {
+      "id": "1756986056922",
+      "userId": "",
+      "bookId": "",
+      "userName": "matheus",
+      "bookTitle": "banana",
+      "date": "2025-09-04T11:40:37.257723",
+      "returned": false
+    },
+    {
+      "id": "1756986098231",
+      "userId": "",
+      "bookId": "",
+      "userName": "matheus",
+      "bookTitle": "banana",
+      "date": "2025-09-04T11:41:23.838019",
+      "returned": false
+    },
+    {
+      "id": "1756986379061",
+      "userId": "",
+      "bookId": "",
+      "userName": "matheus",
+      "bookTitle": "banana",
+      "date": "2025-09-04T11:46:04.541608",
       "returned": false
     }
   ]

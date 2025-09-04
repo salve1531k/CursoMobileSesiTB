@@ -115,9 +115,9 @@ class _UserListViewState extends State<UserListView> {
           TextButton(
             onPressed: () => Navigator.pop(context, false), 
             child: Text("Cancelar")),
-          TextButton(
-            onPressed: () => Navigator.pop(context, false), 
-            child: Text("Excluir")),
+            TextButton(
+              onPressed: () => Navigator.pop(context, true), 
+              child: Text("Excluir")),
           
         ],
       ));
