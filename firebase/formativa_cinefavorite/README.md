@@ -87,5 +87,38 @@ graph TD
     user --> ac1
     user --> ac2
 
-    aci --> ac2
+    ac1 --> ac2
+    ac2 --> ac3
+    ac2 --> ac4
+    ac2 --> ac5
+    ac2 --> ac6
+    ac2 --> ac7
+
 ```
+
+3. ### Fluxo
+Determina o Caminho Percorrido pelo Ator para Executar uma Ação
+
+- Fluxo da Ação de Login
+
+```mermaid
+
+graph TD
+    A[Início] --> B{Login Usuário}
+    B --> C[Inserir Email e Senha]
+    C --> D{Validar as Credenciais}
+    D --> E[SIM]
+    D --> F[NÃO]
+    E --> G[HomePage]
+    F -->B
+
+```
+
+## Prototipagem
+Link dos Protótipos
+
+## Codificação
+
+-- Service --> conectar com a API
+-- model --> favorite movie
+-- Cntroller -> FireStore Database - incompleto

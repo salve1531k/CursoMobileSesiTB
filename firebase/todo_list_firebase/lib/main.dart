@@ -1,16 +1,44 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:todo_list_firebase/firebase_options.dart';
-import 'package:todo_list_firebase/views/autenticacao_view.dart';
+import 'package:formativa_cine_favorite/views/favorite_view.dart';
+import 'package:formativa_cine_favorite/views/login_view.dart';
 
-void main() async{ 
-  WidgetsFlutterBinding.ensureInitialized(); //garantir a inicialização dos bindings
-  //inicializa o firebase -  ao mesmo tempo que abre as telas
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform
-  );
+void main() async{ // Async -> Conect com FireBase
+  // garanto o carregamento dos widgets antes de conectar com o firebase
+  WidgetsFlutterBinding.ensureInitialized();
+  //conexão com o Firebase
+  await Firebase.initializeApp();
+  //montagem das Caracteristicas do APP
   runApp(MaterialApp(
-    title: "Lista de Tarefas",
-    home: AutenticacaoView(), //direciona para tela de autenticação
+    title: "CineFavorite",
+    theme: ThemeData(
+      primarySwatch: Colors.deepOrange,
+      brightness: Brightness.dark
+    ),
+    home: AuthStream(),
   ));
+}
+
+
+class AuthStream extends StatelessWidget {
+  const AuthStream({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<User?>(
+      // o listener esta na mudança de status do usuário
+      stream: FirebaseAuth.instance.authStateChanges(), 
+      builder: (context,snapshot){
+        //se estiver logado , vai para HomeScreen(Tela FAvorito)
+        if(snapshot.hasData){
+          return FavoriteView();
+        }
+        //se não tiver logado
+        return LoginView();
+      });
+  }
+}
+
+class FavoriteView {
 }

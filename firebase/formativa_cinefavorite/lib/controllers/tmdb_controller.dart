@@ -11,7 +11,7 @@ class TmdbController {
 
 
   //método para buscar filme com base no texto
-
+  //método executado pela classe e não pelo OBJ
   static Future<List<Map<String,dynamic>>> searchMovies(String query) async{
     //convert String em URL
     final queryUrl = Uri.parse("$_baseURL/search/movie?api_key=$_apiKey&query=$query&language=pt-BR");
@@ -20,7 +20,9 @@ class TmdbController {
     
     //se reposta form ok ==200
     if(response.statusCode == 200){
+      //converte json => string(dart)
       final data = json.decode(response.body);
+      //Retorna convertendo String em List<Map,String,dynamic>>
       return List<Map<String,dynamic>>.from(data["results"]);
     }else{
     //caso contrário cria uma exception
