@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "622673085091",
+    "project_id": "sa-trabalho-403a8",
+    "storage_bucket": "sa-trabalho-403a8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:622673085091:android:d42d09c91274ca804db516",
+        "android_client_info": {
+          "package_name": "com.example.sa_trabalho"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVoB0n66V3S4P5MQanEbigB7_2E4RJRJU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
