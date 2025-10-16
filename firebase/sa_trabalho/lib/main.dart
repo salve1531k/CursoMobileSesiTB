@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'views/login.dart';
+import 'views/register.dart';
 import 'views/home.dart';
 
 // NOTE: You must add your Firebase config files (google-services.json / GoogleService-Info.plist)
@@ -24,8 +25,10 @@ class MainApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const LoginView(),
+        '/register': (context) => const RegisterView(),
         '/home': (context) => const HomeView(),
       },
     );
   }
 }
+

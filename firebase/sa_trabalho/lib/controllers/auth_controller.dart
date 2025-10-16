@@ -15,12 +15,18 @@ class AuthController {
       return cred;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
-        // Create user automatically for demo purposes
-        final cred = await _auth.createUserWithEmailAndPassword(email: email, password: password);
-        return cred;
+        // Rethrow so callers can decide; prefer explicit registration
+        rethrow;
       }
       rethrow;
     }
+  }
+
+  /// Explicit registration method for NIF + password
+  static Future<UserCredential> registerWithNifAndPassword(String nif, String password) async {
+    final email = _emailFromNif(nif);
+    final cred = await _auth.createUserWithEmailAndPassword(email: email, password: password);
+    return cred;
   }
 
   /// Simple biometric flow: authenticates locally and returns the current Firebase user

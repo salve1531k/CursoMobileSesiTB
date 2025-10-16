@@ -59,4 +59,5 @@ class DefaultFirebaseOptions {
     projectId: 'sa-trabalho-403a8',
     storageBucket: 'sa-trabalho-403a8.firebasestorage.app',
   );
+
 }

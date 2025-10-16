@@ -14,7 +14,6 @@ dependencies:
   firebase_auth: ^4.6.1
   cloud_firestore: ^4.7.0
   local_auth: ^2.1.6
-  permission_handler: ^10.4.0
 
 dev_dependencies:
   flutter_test:
